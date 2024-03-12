@@ -1,0 +1,10 @@
+{
+	"main": [
+		{ "name": "HOME", "url": "/" },
+		{ "name": "ABOUT US", "url": "/aboutus" },
+		{ "name": "MENU", "url": "/menu" },
+		{ "name": "BOOK", "url": "/book" },
+		{ "name": "EVENTS", "url": "/events" },
+		{ "name": "KONTAKT", "url": "/kontakt" }
+	]
+}

@@ -1,0 +1,36 @@
+---
+import { contentfulClient } from '@lib/contentful'
+import { MainMenuFood } from './MainMenuFood'
+
+export interface FoodProps {
+	name: string
+	price: number
+	description?: string
+}
+
+export interface FoodMenuItem {
+	fields: FoodProps
+}
+export interface FoodCategoryProps {
+	name: string
+	listOfMeals: FoodMenuItem[]
+}
+
+export interface FoodCategorie {
+	fields: FoodCategoryProps
+}
+
+export interface MenuFood {
+	contentTypeId: string
+	fields: any
+	items: FoodCategorie[]
+}
+
+const entries = await contentfulClient.getEntries<MenuFood>({
+	content_type: 'category'
+})
+
+const items = entries.items.map((item) => item as unknown as FoodCategorie)
+---
+
+<MainMenuFood client:load items={items} />

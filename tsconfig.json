@@ -1,0 +1,22 @@
+{
+	"extends": "astro/tsconfigs/strict",
+	"compilerOptions": {
+		"target": "es6",
+		"jsxImportSource": "solid-js",
+		"jsx": "preserve",
+		"allowJs": true,
+
+		"baseUrl": ".",
+		"paths": {
+			"@public/": ["./public"],
+			"@components/*": ["./src/components/*"],
+			"@styles/*": ["./src/styles/*"],
+			"@layouts/*": ["./src/layouts/*"],
+			"@media/*": ["./src/media/*"],
+			"@config/*": ["./src/config/*"],
+			"@*": ["./src/*"]
+		}
+	},
+	"include": ["**/*.ts", "**/*.tsx", "**/*.astro"],
+	"exclude": ["node_modules"]
+}

@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets'
+import mainBannerImage from '../../../public/images/circle-logo.png'
+import Button from '@components/primitives/Button'
+---
+
+<div class="my-16 flex max-h-96">
+	<div class="flex w-1/2 justify-center p-16">
+		<Image src={mainBannerImage} alt="Main banner image" height={300} />
+	</div>
+	<div class="flex flex-col justify-center p-10">
+		<h1>Zapraszamy na domowe obiady</h1>
+		<ul class="flex max-w-sm flex-col gap-4 px-4">
+			<li class="flex justify-between">
+				<span>Kotlet schabowy, ziemniaki, surówka</span>
+				<span>21.90</span>
+			</li>
+			<li class="flex justify-between">
+				<span>Kotlet schabowy, ziemniaki, surówka</span>
+				<span>21.90</span>
+			</li>
+			<li class="flex justify-between">
+				<span>Kotlet schabowy, ziemniaki, surówka</span>
+				<span>21.90</span>
+			</li>
+		</ul>
+		<div class="my-8">
+			<Button>Przycisk</Button>
+		</div>
+	</div>
+</div>

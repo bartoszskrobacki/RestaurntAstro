@@ -1,0 +1,53 @@
+{
+	"categories": [
+		{
+			"name": "Zupa",
+			"foodItems": [
+				{ "name": "Zupa pomidorowa", "price": "3,99zł" },
+				{ "name": "Rosół", "price": "3,99zł" },
+				{ "name": "Grzybowa", "price": "3,99zł" },
+				{ "name": "Zupa pomidorowa", "price": "3,99zł" }
+			]
+		},
+		{
+			"name": "Danie główne",
+			"foodItems": [
+				{ "name": "Kotlet schabowy", "description": "ziemniaki, surówka", "price": "23,99zł" },
+				{ "name": "Kotlet schabowy", "description": "ziemniaki, surówka", "price": "23,99zł" },
+
+				{ "name": "Kotlet schabowy", "description": "ziemniaki, surówka", "price": "23,99zł" },
+				{ "name": "Kotlet schabowy", "description": "ziemniaki, surówka", "price": "23,99zł" }
+			]
+		},
+		{
+			"name": "Przywstawki",
+			"foodItems": [
+				{ "name": "Kotlet schabowy", "description": "ziemniaki, surówka", "price": "23,99zł" },
+				{ "name": "Kotlet schabowy", "description": "ziemniaki, surówka", "price": "23,99zł" },
+
+				{ "name": "Kotlet schabowy", "description": "ziemniaki, surówka", "price": "23,99zł" },
+				{ "name": "Kotlet schabowy", "description": "ziemniaki, surówka", "price": "23,99zł" }
+			]
+		},
+		{
+			"name": "Pierogi",
+			"foodItems": [
+				{ "name": "Pierogi", "description": "ziemniaki, surówka", "price": "23,99zł" },
+				{ "name": "Pierogi z grzybami", "description": "ziemniaki, surówka", "price": "23,99zł" },
+
+				{ "name": "Pierogi z kapusta", "description": "ziemniaki, surówka", "price": "23,99zł" },
+				{ "name": "Pierogi ruskie", "description": "ziemniaki, surówka", "price": "23,99zł" }
+			]
+		},
+		{
+			"name": "Dodatki",
+			"foodItems": [
+				{ "name": "Kotlet schabowy", "description": "ziemniaki, surówka", "price": "23,99zł" },
+				{ "name": "Kotlet schabowy", "description": "ziemniaki, surówka", "price": "23,99zł" },
+
+				{ "name": "Kotlet schabowy", "description": "ziemniaki, surówka", "price": "23,99zł" },
+				{ "name": "Kotlet schabowy", "description": "ziemniaki, surówka", "price": "23,99zł" }
+			]
+		}
+	]
+}

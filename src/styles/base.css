@@ -1,0 +1,97 @@
+:root {
+	--accent: 136, 58, 234;
+	--accent-light: 224, 204, 250;
+	--accent-dark: 49, 10, 101;
+	--accent-gradient: linear-gradient(
+		45deg,
+		rgb(var(--accent)),
+		rgb(var(--accent-light)) 30%,
+		white 60%
+	);
+
+	--primary: 255 255 255; /* #ffffff */
+	--primary-100: 125 132 136; /* #7d8488 */
+	--primary-200: 146 152 155; /* #92989b */
+	--primary-300: 246 246 246; /* #ffffff */
+	--primary-400: 255 255 255;
+	--primary-500: 100 100 255; /* #ffffff */
+	--primary-600: 255 255 255;
+	--primary-700: 150 150 255; /* #ffffff */
+	--primary-800: 255 255 255;
+	--primary-900: 255 255 255;
+	--secondary: 0 0 0; /* #000000 */
+	--secondary-100: 102 102 102; /* #666666 */
+	--secondary-200: 128 128 128; /* #808080 */
+	--secondary-300: 204 204 204; /* #cccccc */
+	--secondary-400: 233 233 233; /* #e9e9e9 */
+	--secondary-500: 246 246 246; /* #f6f6f6 */
+	--secondary-600: 243 243 243; /* #f3f3f3 */
+	--selection: rgb(var(--accents-450));
+
+	--accents-000: 164 206 149; /* #a4ce95 */
+	--accents-050: 227 236 223; /* #E3ECDF */
+	--accents-100: 168 180 191; /* #a8b4bf */
+	/* --accents-200: 0 0 0; /* # */
+	--accents-300: 239 237 237; /* #efeded */
+	--accents-400: 227 89 58; /* #e3593a */
+	--accents-450: 244 204 204; /* #F4CCCC */
+	--accents-500: 124 174 210; /* #7CAED2 */
+	--accents-550: 217 226 230; /* #D9E2E6 */
+	--accents-600: 246 242 239; /* #f6f2ef */
+	--accents-700: 238 203 172; /* #eecbac */
+	--accents-800: 222 233 214; /* #dee9d6 */
+	--accents-900: 50 89 198; /* #3259c6 */
+}
+html {
+	font-family: system-ui, sans-serif;
+	background-size: 224px;
+	font-family: 'Outfit', sans-serif;
+}
+code {
+	font-family:
+		Menlo,
+		Monaco,
+		Lucida Console,
+		Liberation Mono,
+		DejaVu Sans Mono,
+		Bitstream Vera Sans Mono,
+		Courier New,
+		monospace;
+}
+main {
+	max-width: 1640px;
+	margin: auto;
+}
+a:hover {
+	@apply text-slate-700;
+}
+
+h1 {
+	font-size: 48px;
+	line-height: 55px;
+	font-weight: 600;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+h2 {
+	font-size: 24px;
+	line-height: 55px;
+	font-weight: 600;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+input {
+	border: 1px solid black;
+	display: block;
+}
+
+label {
+	display: block;
+}
+
+textarea {
+	background: white;
+	border: 1px solid black;
+}

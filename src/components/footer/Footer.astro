@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets'
+import mainBannerImage from '../../../public/images/circle-logo.png'
+---
+
+<div class="bottom-0 flex w-full bg-slate-900 text-primary">
+	<div class="flex w-full justify-between gap-20 px-80 py-11">
+		<div>
+			<h2>Stołówka studencka</h2>
+			<Image src={mainBannerImage} alt="Main banner image" height={150} />
+			<h2>Bar u Piotra</h2>
+			<h2>Restauracja Gościnna</h2>
+		</div>
+		<div>
+			<h2>Menu</h2>
+			<ul class="flex flex-col gap-3">
+				<li>Home</li>
+				<li>About us</li>
+				<li>Book</li>
+				<li>Events</li>
+			</ul>
+		</div>
+		<div class="flex flex-col">
+			<h2>Kontakt</h2>
+			<div class="flex flex-col gap-3">
+				<span>Łużycka 24, Gliwice</span>
+				<span>Telefon 32 237 23 47</span>
+				<span>Email stołówkastudencka@gmail.com</span>
+			</div>
+		</div>
+		<div class="flex flex-col">
+			<h2>Godziny otwarcia</h2>
+			<div class="flex flex-col gap-3">
+				<span>Poniedziałek-Piątek 08.00-18.00</span>
+				<span>Sobota 10.00-14.00</span>
+			</div>
+		</div>
+	</div>
+</div>

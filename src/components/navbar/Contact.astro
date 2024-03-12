@@ -1,0 +1,11 @@
+---
+import Icon from '@components/shared/Icon.astro'
+
+export interface Props {
+	phoneNumber: string
+}
+
+const { phoneNumber } = Astro.props
+---
+
+<a class="flex" href=`tel:${phoneNumber}`><Icon icon="phone" class="mr-2" /> {phoneNumber}</a>

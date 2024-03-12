@@ -1,0 +1,27 @@
+---
+import Layout from '@layouts/Layout.astro'
+import FoodMenu from '@components/foodMenu/FoodMenu.astro'
+import MainBanner from '@components/banners/MainBanner.astro'
+import SecondaryBanner from '@components/banners/SecondaryBanner.astro'
+import { contentfulClient } from '../lib/contentful'
+
+export interface FoodMenuItem {
+	name: string
+	price: string
+	description?: string
+}
+
+export interface FoodCategory {
+	contentTypeId: string
+	name: string
+	fields: FoodMenuItem[]
+}
+---
+
+<Layout title="Stołówka Studencka">
+	<main>
+		<MainBanner />
+		<FoodMenu />
+		<SecondaryBanner />
+	</main>
+</Layout>
