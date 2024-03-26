@@ -41,11 +41,58 @@
 	--accents-700: 238 203 172; /* #eecbac */
 	--accents-800: 222 233 214; /* #dee9d6 */
 	--accents-900: 50 89 198; /* #3259c6 */
+
+	/* Classes from shadowncd ui */
+	--background: 0 0% 100%;
+	--foreground: 240 10% 3.9%;
+	--card: 0 0% 100%;
+	--card-foreground: 240 10% 3.9%;
+	--popover: 0 0% 100%;
+	--popover-foreground: 240 10% 3.9%;
+	--primary-foreground: 355.7 100% 97.3%;
+	--secondary: 240 4.8% 95.9%;
+	--secondary-foreground: 240 5.9% 10%;
+	--muted: 240 4.8% 95.9%;
+	--muted-foreground: 240 3.8% 46.1%;
+	--accent: 240 4.8% 95.9%;
+	--accent-foreground: 240 5.9% 10%;
+	--destructive: 0 84.2% 60.2%;
+	--destructive-foreground: 0 0% 98%;
+	--border: 240 5.9% 90%;
+	--input: 240 5.9% 90%;
+	--ring: 142.1 76.2% 36.3%;
+	--radius: 0.3rem;
 }
+
+.dark {
+	--background: 222.2 84% 4.9%;
+	--foreground: 210 40% 98%;
+	--card: 222.2 84% 4.9%;
+	--card-foreground: 210 40% 98%;
+	--popover: 222.2 84% 4.9%;
+	--popover-foreground: 210 40% 98%;
+	--primary: 217.2 91.2% 59.8%;
+	--primary-foreground: 222.2 47.4% 11.2%;
+	--secondary: 217.2 32.6% 17.5%;
+	--secondary-foreground: 210 40% 98%;
+	--muted: 217.2 32.6% 17.5%;
+	--muted-foreground: 215 20.2% 65.1%;
+	--accent: 217.2 32.6% 17.5%;
+	--accent-foreground: 210 40% 98%;
+	--destructive: 0 62.8% 30.6%;
+	--destructive-foreground: 210 40% 98%;
+	--border: 217.2 32.6% 17.5%;
+	--input: 217.2 32.6% 17.5%;
+	--ring: 224.3 76.3% 48%;
+}
+
 html {
-	font-family: system-ui, sans-serif;
 	background-size: 224px;
-	font-family: 'Outfit', sans-serif;
+	font-family: 'Inconsolata', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+	min-width: fit-content;
 }
 code {
 	font-family:
@@ -59,7 +106,7 @@ code {
 		monospace;
 }
 main {
-	max-width: 1640px;
+	/* max-width: 1640px; */
 	margin: auto;
 }
 a:hover {
@@ -94,4 +141,20 @@ label {
 textarea {
 	background: white;
 	border: 1px solid black;
+}
+
+.dots {
+	background-image: radial-gradient(circle closest-side, rgba(176, 152, 139, 0.25) 80%, #fff 10%);
+	background-position: center bottom;
+	background-repeat: repeat-x;
+	background-size: 4px 2px;
+	border: 0 none;
+	display: block;
+	height: 3px;
+	left: 0;
+	margin: 0;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
 }

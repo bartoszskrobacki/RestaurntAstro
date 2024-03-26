@@ -7,12 +7,11 @@ type Props = {
 
 export const MenuItem: Component<Props> = ({ foodMenuItem }) => {
 	return (
-		<div class="flex min-h-[3rem] max-w-[22rem] justify-between border-b-2">
-			<div class="flex flex-col justify-between text-lg">
-				<h3>{foodMenuItem?.fields.name}</h3>
-				<span class="text-xs">{foodMenuItem?.fields.description}</span>
-			</div>
-			<span>{foodMenuItem.fields.price.toFixed(2)}</span>
+		<div class="relative flex min-h-[3rem] w-full flex-col items-center">
+			<h3 class="mt-4 uppercase">{foodMenuItem?.fields.name}</h3>
+			<span class="min-h-[1rem] text-xs">{foodMenuItem?.fields.description}</span>
+			<span>{foodMenuItem.fields.price.toFixed(2)}zł</span>
+			<span class="dots"></span>
 		</div>
 	)
 }
