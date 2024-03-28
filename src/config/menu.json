@@ -1,10 +1,8 @@
 {
 	"main": [
-		{ "name": "HOME", "url": "/" },
-		{ "name": "ABOUT US", "url": "/aboutus" },
-		{ "name": "MENU", "url": "/menu" },
-		{ "name": "BOOK", "url": "/book" },
-		{ "name": "EVENTS", "url": "/events" },
-		{ "name": "KONTAKT", "url": "/kontakt" }
+		{ "name": "Strona główna", "url": "/" },
+		{ "name": "Dostawa", "url": "/dostawa" },
+		{ "name": "Menu", "url": "/menu" },
+		{ "name": "Kontakt", "url": "/kontakt" }
 	]
 }
