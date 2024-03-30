@@ -1,11 +1,13 @@
 ---
 import { Image } from 'astro:assets'
-import mainBannerImage from '@media/images/main_banner.jpg'
+import { contentfulClient } from '@lib/contentful'
+
+const entries = await contentfulClient.getAsset<any>('36ObVS10rxAkTcAwo2dhbA')
 ---
 
 <div class="relative flex w-full">
 	<div class="flex w-full justify-center py-16">
-		<Image src={mainBannerImage} alt="Main banner image" height={700} />
+		<Image src={entries.fields.file?.url ?? ''} alt="Main banner image" height={700} width={1600} />
 	</div>
 	<!-- <div class="relative flex flex-col justify-center p-10">
 		<h1>Zapraszamy na domowe obiady</h1>
