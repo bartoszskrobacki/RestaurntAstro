@@ -1,29 +1,35 @@
 ---
-import { Image } from 'astro:assets'
-import mainBannerImage from '@media/images/logo_u_piotra.png'
+import Icon from '@components/shared/Icon.astro'
 ---
 
 <div class="bottom-0 flex w-full bg-slate-900 text-primary">
-	<div class="flex w-full justify-between gap-20 px-80 py-11">
-		<div>
-			<h2>Stołówka studencka</h2>
-			<Image src={mainBannerImage} alt="Main banner image" height={150} />
+	<div
+		class="flex w-full flex-col items-center justify-center gap-20 px-11 py-11 md:flex-row md:items-start md:justify-between xl:px-80"
+	>
+		<div class="flex w-full flex-col">
 			<h2>Bar u Piotra</h2>
-			<h2>Restauracja Gościnna</h2>
+			<a href="https://www.facebook.com/obiadygliwice">
+				<Icon icon="facebook" />
+			</a>
 		</div>
-		<div class="flex flex-col">
-			<h2>Kontakt</h2>
-			<div class="flex flex-col gap-3">
-				<span>Łużycka 24, Gliwice</span>
-				<span>Telefon 32 237 23 47</span>
-				<span>Email stołówkastudencka@gmail.com</span>
-			</div>
-		</div>
-		<div class="flex flex-col">
+
+		<div class="flex w-full flex-col">
 			<h2>Godziny otwarcia</h2>
 			<div class="flex flex-col gap-3">
-				<span>Poniedziałek-Piątek 08.00-18.00</span>
-				<span>Sobota 10.00-14.00</span>
+				<span class="font-bold">Poniedziałek-Piątek</span>
+				<span>08.00-18.00</span>
+				<span class="font-bold">Sobota</span>
+				<span>10.00-14.00</span>
+			</div>
+		</div>
+		<div class="flex w-full flex-col">
+			<h2>Kontakt</h2>
+			<div class="flex flex-col gap-3">
+				<span class="font-bold">Telefon</span>
+				<a href="tel:32 232 24 02"><span> 32 232 24 02</span></a>
+				<a href="tel:570 100 110"><span> 570 100 110</span></a>
+				<span class="font-bold">Adres</span>
+				<span>Zwycięsta 17, Gliwice</span>
 			</div>
 		</div>
 	</div>

@@ -8,6 +8,6 @@ export interface Props {
 const { phoneNumber } = Astro.props
 ---
 
-<a class="flex" href=`tel:${phoneNumber}`
-	><Icon icon="phone" /> <span class="pl-1">{phoneNumber}</span></a
+<a class="hidden md:flex" href=`tel:${phoneNumber}`
+	><Icon icon="phone" /> <span class="pl-1 font-bold">{phoneNumber}</span></a
 >

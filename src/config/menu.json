@@ -1,8 +1,6 @@
 {
 	"main": [
-		{ "name": "Strona główna", "url": "/" },
-		{ "name": "Dostawa", "url": "/dostawa" },
-		{ "name": "Menu", "url": "/menu" },
-		{ "name": "Kontakt", "url": "/kontakt" }
+		{ "name": "Strona główna", "url": "main" },
+		{ "name": "Menu", "url": "menu" }
 	]
 }

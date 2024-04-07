@@ -12,7 +12,7 @@
 	--primary: 255 255 255; /* #ffffff */
 	--primary-100: 125 132 136; /* #7d8488 */
 	--primary-200: 146 152 155; /* #92989b */
-	--primary-300: 246 246 246; /* #ffffff */
+	--primary-300: 246 246 246; /* #faf9f6 */
 	--primary-400: 255 255 255;
 	--primary-500: 100 100 255; /* #ffffff */
 	--primary-600: 255 255 255;
@@ -157,4 +157,28 @@ textarea {
 	right: 0;
 	bottom: 0;
 	z-index: 1;
+}
+
+.ribbon {
+	background: #25262e;
+	display: inline-block;
+	padding: 0 12px 0 24px;
+	text-align: center;
+	position: relative;
+	height: 24px;
+}
+
+.ribbon:after {
+	content: '';
+	position: absolute;
+	display: block;
+	bottom: 0;
+	border: 12px solid #25262e;
+	z-index: -1;
+	right: -24px;
+	border-left-width: 24px;
+	border-right-color: transparent;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px;
 }

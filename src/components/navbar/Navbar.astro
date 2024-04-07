@@ -1,14 +1,14 @@
 ---
 import { Image } from 'astro:assets'
 import logo from '@media/images/logo_u_piotra.png'
-import Menu from '@components/navbar/Menu.astro'
+import { Menu } from '@components/navbar/Menu.tsx'
 import Contact from './Contact.astro'
 ---
 
 <div class="fixed top-0 z-10 w-full bg-primary px-9 opacity-100 shadow-md">
 	<div class="mx-auto flex max-w-7xl items-center justify-between">
-		<Image src={logo} alt="logo" height={64} />
-		<Menu />
+		<Image src={logo} alt="logo" height={64} loading={'eager'} />
+		<Menu client:idle />
 		<Contact phoneNumber="32 237 23 47" />
 	</div>
 </div>

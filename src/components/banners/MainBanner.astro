@@ -1,32 +1,16 @@
 ---
 import { Image } from 'astro:assets'
+import mainBannerImage from '@media/images/main_banner.png'
 import { contentfulClient } from '@lib/contentful'
 
 const entries = await contentfulClient.getAsset<any>('36ObVS10rxAkTcAwo2dhbA')
+
+console.log(entries)
 ---
 
-<div class="relative flex w-full">
-	<div class="flex w-full justify-center py-16">
-		<Image src={entries.fields.file?.url ?? ''} alt="Main banner image" height={700} width={1600} />
-	</div>
-	<!-- <div class="relative flex flex-col justify-center p-10">
-		<h1>Zapraszamy na domowe obiady</h1>
-		<ul class="flex max-w-sm flex-col gap-4 px-4">
-			<li class="flex justify-between">
-				<span>Kotlet schabowy, ziemniaki, surówka</span>
-				<span>21.90</span>
-			</li>
-			<li class="flex justify-between">
-				<span>Kotlet schabowy, ziemniaki, surówka</span>
-				<span>21.90</span>
-			</li>
-			<li class="flex justify-between">
-				<span>Kotlet schabowy, ziemniaki, surówka</span>
-				<span>21.90</span>
-			</li>
-		</ul>
-		<div class="my-8">
-			<Button>Przycisk</Button>
-		</div>
-	</div> -->
+<div
+	id="main"
+	class="relative mx-auto flex w-full max-w-[1600px] scroll-my-16 justify-center py-16"
+>
+	<Image src={mainBannerImage} alt="Main banner" height={700} width={1600} loading={'eager'} />
 </div>
