@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets'
+import discountBannerImage from '@media/images/discount_banner.jpeg'
+---
+
+<div class="mx-auto my-16 flex max-w-7xl flex-col justify-center">
+	<div class="ribbon mx-auto mb-6">
+		<h6 class="text-primary">Danie dnia</h6>{' '}
+	</div>
+	<div class="mx-auto flex flex-col md:max-h-96 md:flex-row">
+		<div class="flex w-full justify-center px-16 md:w-1/2">
+			<Image src={discountBannerImage} alt="Banner z promocjami" height={500} />
+		</div>
+		<div class="flex w-full flex-col justify-center px-16 py-8 md:w-1/2 md:p-10">
+			<span class="flex text-primary-200">08.04.2024</span>
+			<h2 class="">Codziennie zapraszamy na wyjątkowe oferty dnia</h2>
+			<div class="flex flex-col gap-2 text-primary-100">
+				<div class="flex justify-between">
+					<span>Pałka z kurczaka w warzywach gotowanych, ziemniaki, surówka</span><span>21,90</span>
+				</div>
+				<div class="flex justify-between">
+					<span>Filety z kurczaka po parysku, frytki, surówka</span><span>24,90</span>
+				</div>
+				<div class="flex justify-between">
+					<span>Schabowy "oko demona"</span><span>25,90</span>
+				</div>
+				<div class="flex justify-between">
+					<span>Kaczka w pomarańczach, ziemniaki, surówka</span><span>26,90</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

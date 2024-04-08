@@ -2,6 +2,7 @@
 import Layout from '@layouts/Layout.astro'
 import FoodMenu from '@components/foodMenu/FoodMenu.astro'
 import MainBanner from '@components/banners/MainBanner.astro'
+import DiscountBanner from '@components/banners/DiscountBanner.astro'
 
 export interface FoodMenuItem {
 	name: string
@@ -19,6 +20,7 @@ export interface FoodCategory {
 <Layout title="Bar u Piotra">
 	<main>
 		<MainBanner />
+		<DiscountBanner />
 		<FoodMenu />
 	</main>
 </Layout>

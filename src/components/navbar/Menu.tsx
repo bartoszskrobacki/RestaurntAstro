@@ -17,11 +17,9 @@ export const Menu: Component<Props> = () => {
 	}
 
 	return (
-		<ul class="flex justify-center gap-5 font-bold">
+		<ul class="flex cursor-pointer justify-center gap-5 font-bold">
 			{main.map((menuItem) => (
-				<li onClick={() => scrollIntoView(menuItem.url)}>
-					<a> {menuItem.name.toUpperCase()}</a>
-				</li>
+				<li onClick={() => scrollIntoView(menuItem.url)}>{menuItem.name.toUpperCase()}</li>
 			))}
 		</ul>
 	)
