@@ -7,4 +7,4 @@ const { icon, ...attributes } = Astro.props as Props
 const { default: innerHTML } = await import(`./../../media/icons/${icon}.svg?raw`)
 ---
 
-<Fragment set:html={innerHTML} />
+<Fragment set:html={innerHTML}  />

@@ -1,6 +1,36 @@
 ---
 import { Image } from 'astro:assets'
 import discountBannerImage from '@media/images/discount_banner.jpeg'
+import { contentfulClient } from 'src/lib/contentful'
+import type { MenuFood } from '../foodMenu/FoodMenu.astro'
+
+export interface FoodMenuItem {
+	fields: FoodProps
+}
+export interface FoodDiscount {
+	date: string
+	meals: FoodMenuItem[]
+}
+
+export interface FoodProps {
+	name: string
+	price: number
+	description?: string
+}
+
+export interface FoodDiscountEntry {
+	contentTypeId: string
+	fields: any
+	items: FoodDiscount[]
+}
+
+const entries = await contentfulClient.getEntries<FoodDiscountEntry>({
+	content_type: 'promotion'
+})
+
+const items = entries.items[0].fields as unknown as FoodDiscount
+
+const postDate = new Date(items.date).toLocaleDateString('pl')
 ---
 
 <div class="mx-auto my-16 flex max-w-7xl flex-col justify-center">
@@ -12,22 +42,26 @@ import discountBannerImage from '@media/images/discount_banner.jpeg'
 			<Image src={discountBannerImage} alt="Banner z promocjami" height={500} />
 		</div>
 		<div class="flex w-full flex-col justify-center px-16 py-8 md:w-1/2 md:p-10">
-			<span class="flex text-primary-200">08.04.2024</span>
+			<span class="flex text-primary-200">{postDate}</span>
 			<h2 class="">Codziennie zapraszamy na wyjątkowe oferty dnia</h2>
 			<div class="flex flex-col gap-2 text-primary-100">
-				<div class="flex justify-between">
-					<span>Pałka z kurczaka w warzywach gotowanych, ziemniaki, surówka</span><span>21,90</span>
-				</div>
-				<div class="flex justify-between">
-					<span>Filety z kurczaka po parysku, frytki, surówka</span><span>24,90</span>
-				</div>
-				<div class="flex justify-between">
-					<span>Schabowy "oko demona"</span><span>25,90</span>
-				</div>
-				<div class="flex justify-between">
-					<span>Kaczka w pomarańczach, ziemniaki, surówka</span><span>26,90</span>
-				</div>
+				{
+					items?.meals?.map((meal) => (
+						<div class="flex justify-between">
+							<>
+								<span>
+									{meal?.fields?.name}, {meal.fields.description}
+								</span>
+								<span>{meal.fields.price.toFixed(2)}</span>
+							</>
+						</div>
+					))
+				}
 			</div>
 		</div>
 	</div>
 </div>
+
+<!-- {main.map((menuItem) => (
+	<li onClick={() => scrollIntoView(menuItem.url)}>{menuItem.name.toUpperCase()}</li>
+))} -->

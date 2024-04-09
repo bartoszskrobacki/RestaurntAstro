@@ -1,11 +1,6 @@
 ---
 import { Image } from 'astro:assets'
 import mainBannerImage from '@media/images/main_banner.png'
-import { contentfulClient } from '@lib/contentful'
-
-const entries = await contentfulClient.getAsset<any>('36ObVS10rxAkTcAwo2dhbA')
-
-console.log(entries)
 ---
 
 <div
