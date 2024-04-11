@@ -27,7 +27,7 @@
 		"prettier": "^3.0.3",
 		"prettier-plugin-astro": "^0.12.0"
 	},
-	"overrides": {
-		"rollup": "npm:@rollup/wasm-node"
+	"resolutions": {
+		"rollup": "npm:@rollup/wasm-node@*"
 	}
 }
