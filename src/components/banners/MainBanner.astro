@@ -1,11 +1,19 @@
 ---
 import { Image } from 'astro:assets'
-import mainBannerImage from '@media/images/main_banner.png'
+// import mainBannerImage from '@media/images/main_banner.webp'
+import { contentfulClient } from '@lib/contentful'
+const banner = await contentfulClient.getAsset('6fGncPapkme4ru4wN4G86B')
 ---
 
 <div
 	id="main"
 	class="relative mx-auto flex w-full max-w-[1600px] scroll-my-16 justify-center py-16"
 >
-	<Image src={mainBannerImage} alt="Main banner" height={700} width={1600} loading={'eager'} />
+	<Image
+		src={banner.fields.file?.url ?? ''}
+		alt="Main banner"
+		height={700}
+		width={1600}
+		loading={'eager'}
+	/>
 </div>
