@@ -5,7 +5,7 @@ import { Menu } from '@components/navbar/Menu.tsx'
 import Contact from './Contact.astro'
 ---
 
-<div class="fixed top-0 z-10 w-full bg-primary px-9 opacity-100 shadow-md">
+<div class="fixed top-0 z-10 w-full bg-primary bg-opacity-95 px-9 text-primary-800 shadow-md">
 	<div class="mx-auto flex max-w-7xl items-center justify-between">
 		<Image src={logo} alt="logo" height={64} loading={'eager'} />
 		<Menu client:idle />

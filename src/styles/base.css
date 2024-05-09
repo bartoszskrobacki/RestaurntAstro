@@ -10,15 +10,15 @@
 	);
 
 	--primary: 255 255 255; /* #ffffff */
-	--primary-100: 125 132 136; /* #7d8488 */
+	--primary-100: 123 116 120; /* #7d8488 */
 	--primary-200: 146 152 155; /* #92989b */
 	--primary-300: 246 246 246; /* #faf9f6 */
 	--primary-400: 255 255 255;
 	--primary-500: 100 100 255; /* #ffffff */
 	--primary-600: 255 255 255;
 	--primary-700: 150 150 255; /* #ffffff */
-	--primary-800: 255 255 255;
-	--primary-900: 255 255 255;
+	--primary-800: 37 38 46;
+	--primary-900: 0 0 0;
 	--secondary: 0 0 0; /* #000000 */
 	--secondary-100: 102 102 102; /* #666666 */
 	--secondary-200: 128 128 128; /* #808080 */
@@ -64,6 +64,21 @@
 	--radius: 0.3rem;
 }
 
+@font-face {
+	font-family: 'Jaapokki';
+	src: url('/fonts/Jaapokki-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+.maven-pro- {
+	font-family: 'Maven Pro', sans-serif;
+	font-optical-sizing: auto;
+	font-weight: <weight>;
+	font-style: normal;
+}
+
 .dark {
 	--background: 222.2 84% 4.9%;
 	--foreground: 210 40% 98%;
@@ -88,7 +103,8 @@
 
 html {
 	background-size: 224px;
-	font-family: 'Inconsolata', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: 'Maven Pro', 'Jaapokki', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	letter-spacing: 2px;
 }
 
 body {
@@ -109,14 +125,14 @@ main {
 	/* max-width: 1640px; */
 	margin: auto;
 }
-a:hover {
-	@apply text-slate-700;
-}
 
 h1 {
-	font-size: 48px;
-	line-height: 55px;
-	font-weight: 600;
+	font-family: 'Jaapokki', sans-serif;
+	text-transform: uppercase;
+	font-size: 40px;
+	line-height: 1.3em;
+	letter-spacing: 10px;
+	font-weight: 800;
 	position: relative;
 	margin-bottom: 20px;
 }
@@ -143,6 +159,31 @@ textarea {
 	border: 1px solid black;
 }
 
+a:after {
+	display: block;
+	content: '';
+	border-bottom: solid 3px black;
+	transform: scaleX(0);
+	transition: transform 250ms ease-in-out;
+	transform-origin: 0% 50%;
+}
+a:hover:after {
+	transform: scaleX(1);
+}
+
+input,
+textarea {
+	background: #eeeef0;
+	padding: 16px 19px;
+	color: #acafba;
+	font-family: 'Maven Pro';
+	font-size: 13px;
+	display: inline-block;
+	border: none;
+	border: 1px solid transparent;
+	width: 100%;
+}
+
 .dots {
 	background-image: radial-gradient(circle closest-side, rgba(176, 152, 139, 0.25) 80%, #fff 10%);
 	background-position: center bottom;
@@ -160,12 +201,7 @@ textarea {
 }
 
 .ribbon {
-	background: #25262e;
-	display: inline-block;
-	padding: 0 12px 0 24px;
-	text-align: center;
-	position: relative;
-	height: 24px;
+	@apply relative inline-block h-6 bg-primary-800 pl-6 pr-3 text-center;
 }
 
 .ribbon:after {

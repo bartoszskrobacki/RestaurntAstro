@@ -1,54 +1,41 @@
 import { type Component } from 'solid-js'
-import Button from '@components/primitives/Button'
-import emailjs from '@emailjs/browser'
+import { OpenHours } from './OpenHours'
+import { ContactForm } from './ContactForm'
 
 type Props = {}
 
 export const Contact: Component<Props> = ({}) => {
-	const EMAIL_JS = import.meta.env.EMAIL_JS_PUBLIC_KEY
-	emailjs.init(EMAIL_JS)
-	const params = {
-		from_name: 'bartek',
-		message: 'Dzien dobry witam serdecznie',
-		to_name: 'artek'
-	}
-	const serviceID = 'default_service'
-	const template_id = 'template_27tv6nd'
-
-	const sendEmail = () => {
-		console.log('sent')
-		// emailjs.send(serviceID, template_id, params, 'FWLm0n59VFKXWMA6r').then(
-		// 	function (response) {
-		// 		console.log('SUCCESS!', response.status, response.text)
-		// 	},
-		// 	function (error) {
-		// 		console.log('FAILED...', error)
-		// 	}
-		// )
-	}
-
 	return (
-		<div class="mx-auto mt-40 flex h-96 max-w-4xl bg-primary p-7 shadow-md">
+		<div class="mx-auto mt-20 flex max-w-7xl p-7">
 			<div class="w-full">
-				<h1>Skontaktuj się z nami! </h1>
-				<form id="contact-form">
-					<div class="flex ">
-						<div>
-							<label>Imię i nazwisko</label>
-							<input placeholder="Imię i nazwisko" type="text" name="user_name" />
+				<h1 class="text-center">Skontaktuj się z nami! </h1>
+				<OpenHours />
+				<div class="my-10 flex w-full justify-center">
+					<div class="flex flex-col pr-10">
+						<div class="flex flex-col py-3">
+							<h2 class="text-base">Telefon</h2>
+							<ul>
+								<li>
+									<a href="tel:32 232 24 02">32 232 24 02</a>
+								</li>
+								<li>
+									<a href="tel:570 100 110">570 100 110</a>
+								</li>
+							</ul>
 						</div>
-						<div>
-							<label>Email</label>
-							<input placeholder="Email" type="email" name="user_email" />
+						<div class="py-3 ">
+							<h2 class="text-base">Adres</h2>
+							<span>Zwycięsta 31 Gliwice</span>
+						</div>
+
+						<div class="py-3 ">
+							<h2 class="text-base">Email</h2>
+							<span>barupiotra@gmail.com</span>
 						</div>
 					</div>
-					<div>
-						<label>Wiadomość</label>
-						<textarea class="w-full" placeholder="Wiadomość" name="message"></textarea>
-					</div>
-					{/* <input type="submit" value="Send" /> */}
-				</form>
-				<Button onClick={() => sendEmail()}>Wyślij formularz</Button>
+					<ContactForm />
+					{/* <GoogleMap /> */}
+				</div>
 			</div>
 		</div>
 	)

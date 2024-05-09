@@ -17,16 +17,22 @@ export const MainMenuFood: Component<Props> = (props) => {
 			class="mx-auto mb-32 flex min-h-[250px] max-w-4xl scroll-my-16 flex-col items-center justify-center"
 		>
 			<div class="ribbon mb-6">
-				<h6 class="text-primary">Menu</h6>{' '}
+				<h6 class=" text-sm leading-6 text-primary">Menu</h6>{' '}
 			</div>
-			<div class="mb-6 flex cursor-pointer flex-col items-center justify-around font-light md:flex-row md:gap-8">
+			<div class="mb-6 flex cursor-pointer flex-col items-center justify-around font-light  text-primary-100 md:flex-row md:gap-8">
 				<For each={props.items}>
 					{(categorie) => (
-						<div
-							class={activeCategory() === categorie.fields.name ? 'font-black underline' : ''}
-							onClick={() => setActiveCategory(categorie.fields.name)}
-						>
-							<span> {categorie?.fields?.name?.toUpperCase()}</span>
+						<div onClick={() => setActiveCategory(categorie.fields.name)}>
+							<span
+								class={
+									activeCategory() === categorie.fields.name
+										? 'font-black text-primary-900 underline'
+										: ''
+								}
+							>
+								{' '}
+								{categorie?.fields?.name?.toUpperCase()}
+							</span>
 						</div>
 					)}
 				</For>

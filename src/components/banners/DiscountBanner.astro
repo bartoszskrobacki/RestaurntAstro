@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-import discountBannerImage from '@media/images/discount_banner.webp'
-import { contentfulClient } from 'src/lib/contentful'
+import { contentfulClient } from '@lib/contentful'
 
 export interface FoodMenuItem {
 	fields: FoodProps
@@ -28,20 +27,26 @@ const entries = await contentfulClient.getEntries<FoodDiscountEntry>({
 })
 
 const items = entries.items[0].fields as unknown as FoodDiscount
+const banner = await contentfulClient.getAsset('2w8hSEdMbmk7ewrT2KMpMG')
 
 const postDate = new Date(items.date).toLocaleDateString('pl')
 ---
 
-<div class="mx-auto my-16 flex max-w-7xl flex-col justify-center">
+<div class="mx-auto mb-16 flex max-w-7xl flex-col justify-center">
 	<div class="ribbon mx-auto mb-6">
-		<h6 class="text-primary">Danie dnia</h6>{' '}
+		<h1 class="text-sm leading-6 text-primary">Danie dnia</h1>{' '}
 	</div>
 	<div class="mx-auto flex flex-col md:max-h-96 md:flex-row">
 		<div class="flex w-full justify-center px-16 md:w-1/2">
-			<Image src={discountBannerImage} alt="Banner z promocjami" height={500} />
+			<Image
+				src={banner.fields.file?.url ?? ''}
+				alt="Banner z promocjami"
+				height={500}
+				width={700}
+			/>
 		</div>
 		<div class="flex w-full flex-col justify-center px-16 py-8 md:w-1/2 md:p-10">
-			<span class="flex text-primary-200">{postDate}</span>
+			<span class="flex text-primary-100">{postDate}</span>
 			<h2 class="">Codziennie zapraszamy na wyjątkowe oferty dnia</h2>
 			<div class="flex flex-col gap-2 text-primary-100">
 				{
