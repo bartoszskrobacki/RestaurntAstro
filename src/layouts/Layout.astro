@@ -3,6 +3,7 @@ import '@styles/base.css'
 import Navbar from '@components/navbar/Navbar.astro'
 import Footer from '@components/footer/Footer.astro'
 import emailjs from '@emailjs/browser'
+import { ViewTransitions } from 'astro:transitions'
 
 interface Props {
 	title: string
@@ -16,7 +17,7 @@ emailjs.init(EMAIL_JS)
 <html lang="en">
 	<head>
 		<title>{title}</title>
-
+		<ViewTransitions />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta
@@ -30,16 +31,6 @@ emailjs.init(EMAIL_JS)
 			href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap"
 			rel="stylesheet"
 		/>
-		<script
-			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5X9FwOeRSiGuIskn9AeAavg4yZJxCgd0"
-			is:inline></script>
-		<noscript>
-			<link
-				href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap"
-				rel="stylesheet"
-				type="text/css"
-			/>
-		</noscript>
 	</head>
 	<body>
 		<Navbar />

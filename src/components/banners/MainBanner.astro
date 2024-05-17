@@ -4,10 +4,7 @@ import { contentfulClient } from '@lib/contentful'
 const banner = await contentfulClient.getAsset('6fGncPapkme4ru4wN4G86B')
 ---
 
-<div
-	id="main"
-	class="relative mx-auto flex w-full max-w-[1600px] scroll-my-16 justify-center py-16"
->
+<div id="main" class="relative mx-auto flex w-full scroll-mt-16 justify-center pt-16">
 	<Image
 		src={banner.fields.file?.url ?? ''}
 		alt="Main banner"

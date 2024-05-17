@@ -6,26 +6,23 @@ import FoodMenu from '@components/foodMenu/FoodMenu.astro'
 <Layout title="Bar u Piotra menu">
 	<div class="mx-auto mt-20 flex max-w-7xl p-7">
 		<div class="w-full">
-			<h1 class="text-center">Menu</h1>
-
-			<div class="mb-6 text-center text-primary-200">
-				<h2 class="text-base">Codziennie zapraszamy na świeze potrawy!</h2>
-				<p class="mx-16 flex flex-col px-8">
-					<span>
+			<div class="mb-6 text-center">
+				<h2 class="text-base text-primary-200">Codziennie zapraszamy na świeze potrawy!</h2>
+				<p class="flex flex-col text-primary-200 md:mx-16 md:px-8">
+					<span class="mb-6">
 						Od poniedziałku do piątku przygotowujemy oferty dnia, zapoznaj się z nimi na stronie
 						głównej!
 					</span>
-					<span>Do zestawu obiadowego zupa za 7,90zł!</span>
+
 					<span>Zamówienia przyjmujemy telefonicznie.</span>
-				</p>
 
-				<FoodMenu />
-
-				<p class="mx-16 flex flex-col px-8">
 					<span>Dowozimy na terenie Gliwic</span>
 					<span>Koszt dowozu do 7km - 7zł, powyzej 7km-15zł</span>
-					<span>Niedziela 11.00-16.00</span>
+					<span class="text-xs"
+						>*Dla dowozów doliczane małe opakowanie 60gr, duze opakowanie 1.50zł</span
+					>
 				</p>
+				<FoodMenu />
 			</div>
 		</div>
 	</div>

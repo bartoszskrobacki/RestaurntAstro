@@ -99,7 +99,7 @@ export const ContactForm: Component<Props> = ({}) => {
 	// }
 
 	return (
-		<div class="w-2/3">
+		<div class="w-full md:w-2/3">
 			<form onSubmit={sendEmail} class="w-full" id="contact-form">
 				<div class="mb-5 grid w-full grid-cols-2 gap-8">
 					<div>

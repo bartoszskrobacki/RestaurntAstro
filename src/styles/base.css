@@ -13,7 +13,7 @@
 	--primary-100: 123 116 120; /* #7d8488 */
 	--primary-200: 146 152 155; /* #92989b */
 	--primary-300: 246 246 246; /* #faf9f6 */
-	--primary-400: 255 255 255;
+	--primary-400: 50, 168, 82; /* #f4f4f6 */
 	--primary-500: 100 100 255; /* #ffffff */
 	--primary-600: 255 255 255;
 	--primary-700: 150 150 255; /* #ffffff */
@@ -102,7 +102,6 @@
 }
 
 html {
-	background-size: 224px;
 	font-family: 'Maven Pro', 'Jaapokki', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	letter-spacing: 2px;
 }
@@ -127,8 +126,6 @@ main {
 }
 
 h1 {
-	font-family: 'Jaapokki', sans-serif;
-	text-transform: uppercase;
 	font-size: 40px;
 	line-height: 1.3em;
 	letter-spacing: 10px;
@@ -162,7 +159,7 @@ textarea {
 a:after {
 	display: block;
 	content: '';
-	border-bottom: solid 3px black;
+	border-bottom: solid 2px black;
 	transform: scaleX(0);
 	transition: transform 250ms ease-in-out;
 	transform-origin: 0% 50%;
@@ -200,7 +197,7 @@ textarea {
 	z-index: 1;
 }
 
-.ribbon {
+/* .ribbon {
 	@apply relative inline-block h-6 bg-primary-800 pl-6 pr-3 text-center;
 }
 
@@ -217,4 +214,28 @@ textarea {
 	-webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px;
 	-moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px;
 	box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px;
+} */
+
+.border-corners {
+	--s: 50px; /* the size on the corner */
+	--t: 5px; /* the thickness of the border */
+	--g: 20px; /* the gap between the border and image */
+
+	padding: calc(var(--g) + var(--t));
+	outline: var(--t) solid #d9636a; /* the color here */
+	outline-offset: calc(-1 * var(--t));
+	mask:
+		conic-gradient(at var(--s) var(--s), #0000 75%, #000 0) 0 0 / calc(100% - var(--s))
+			calc(100% - var(--s)),
+		linear-gradient(#000 0 0) content-box;
+	transition: 0.4s;
+}
+.border-corners:hover {
+	outline-offset: calc(var(--g) / -1);
+	outline: var(--t) solid #92989b; /* the color here */
+	color: black;
+}
+
+.image-shadow {
+	box-shadow: 5px 8.7px 20px rgba(0, 0, 0, 0.2);
 }

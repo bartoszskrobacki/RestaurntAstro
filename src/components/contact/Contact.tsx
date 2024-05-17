@@ -6,12 +6,12 @@ type Props = {}
 
 export const Contact: Component<Props> = ({}) => {
 	return (
-		<div class="mx-auto mt-20 flex max-w-7xl p-7">
+		<div class="mx-auto mt-20 flex max-w-7xl p-7 ">
 			<div class="w-full">
 				<h1 class="text-center">Skontaktuj się z nami! </h1>
 				<OpenHours />
-				<div class="my-10 flex w-full justify-center">
-					<div class="flex flex-col pr-10">
+				<div class="my-10 flex w-full flex-col justify-center  md:flex-row">
+					<div class="flex w-full flex-col pr-10 md:w-auto">
 						<div class="flex flex-col py-3">
 							<h2 class="text-base">Telefon</h2>
 							<ul>
