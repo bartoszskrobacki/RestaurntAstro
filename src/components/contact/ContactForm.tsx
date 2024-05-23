@@ -34,21 +34,21 @@ export const ContactForm: Component<Props> = ({}) => {
 		console.log('sent')
 		console.log(JSON.stringify(contactForm))
 		console.log(EMAIL_JS)
-		// emailjs.send(serviceID, template_id, contactForm, EMAIL_JS).then(
-		// 	function (response) {
-		// 		console.log('SUCCESS!', response.status, response.text)
-		// 	},
-		// 	function (error) {
-		// 		console.log('FAILED...', error)
-		// 	}
-		// )
-		// setContactForm({
-		// 	name: '',
-		// 	email: '',
-		// 	topic: '',
-		// 	phone: '',
-		// 	message: ''
-		// })
+		emailjs.send(serviceID, template_id, contactForm, EMAIL_JS).then(
+			function (response) {
+				console.log('SUCCESS!', response.status, response.text)
+			},
+			function (error) {
+				console.log('FAILED...', error)
+			}
+		)
+		setContactForm({
+			name: '',
+			email: '',
+			topic: '',
+			phone: '',
+			message: ''
+		})
 	}
 
 	const handleInput = (
@@ -73,25 +73,25 @@ export const ContactForm: Component<Props> = ({}) => {
 		setContactForm(name as keyof ContactFormType, value)
 	}
 
-	// const formSubmit = (ref: HTMLFormElement, accessor: Accessor<ContactFormType>) => {
-	// 	console.log('dupa')
-	// 	const callback = accessor() || (() => {})
-	// 	ref.setAttribute('novalidate', '')
-	// 	ref.onsubmit = async (e) => {
-	// 		e.preventDefault()
-	// 		let errored = false
+	const formSubmit = (ref: HTMLFormElement, accessor: Accessor<ContactFormType>) => {
+		console.log('dupa')
+		const callback = accessor() || (() => {})
+		ref.setAttribute('novalidate', '')
+		ref.onsubmit = async (e) => {
+			e.preventDefault()
+			let errored = false
 
-	// 		// for (const k in fields) {
-	// 		// 	const field = fields[k]
-	// 		// 	// await checkValid(field, setErrors, errorClass)();
-	// 		// 	if (!errored && field.element.validationMessage) {
-	// 		// 		field.element.focus()
-	// 		// 		errored = true
-	// 		// 	}
-	// 		// }
-	// 		!errored && callback(ref)
-	// 	}
-	// }
+			// for (const k in fields) {
+			// 	const field = fields[k]
+			// 	// await checkValid(field, setErrors, errorClass)();
+			// 	if (!errored && field.element.validationMessage) {
+			// 		field.element.focus()
+			// 		errored = true
+			// 	}
+			// }
+			!errored && callback(ref)
+		}
+	}
 
 	// const fn = (form) => {
 	// 	form.submit()
@@ -99,7 +99,8 @@ export const ContactForm: Component<Props> = ({}) => {
 	// }
 
 	return (
-		<div class="w-full md:w-2/3">
+		<div class="mt-6 w-full md:w-2/3">
+			<h1 class="text-base">Formularz kontaktowy</h1>
 			<form onSubmit={sendEmail} class="w-full" id="contact-form">
 				<div class="mb-5 grid w-full grid-cols-2 gap-8">
 					<div>
@@ -157,7 +158,7 @@ export const ContactForm: Component<Props> = ({}) => {
 					></textarea>
 				</div>
 				{/* <input type="submit" value="Send" /> */}
-				<input class="form-submit" type="submit" value="Wyślij wiadomość" />
+				<input type="submit" value="Wyślij wiadomość" />
 			</form>
 		</div>
 	)

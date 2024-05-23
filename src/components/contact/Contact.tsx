@@ -10,8 +10,8 @@ export const Contact: Component<Props> = ({}) => {
 			<div class="w-full">
 				<h1 class="text-center">Skontaktuj się z nami! </h1>
 				<OpenHours />
-				<div class="my-10 flex w-full flex-col justify-center  md:flex-row">
-					<div class="flex w-full flex-col pr-10 md:w-auto">
+				<div class="my-6 flex w-full flex-col justify-center md:my-10 md:flex-row">
+					<div class="flex w-full flex-col pr-10 md:w-auto md:pt-14">
 						<div class="flex flex-col py-3">
 							<h2 class="text-base">Telefon</h2>
 							<ul>
@@ -30,7 +30,7 @@ export const Contact: Component<Props> = ({}) => {
 
 						<div class="py-3 ">
 							<h2 class="text-base">Email</h2>
-							<span>barupiotra@gmail.com</span>
+							<span>info@goscinna.gliwice.pl</span>
 						</div>
 					</div>
 					<ContactForm />

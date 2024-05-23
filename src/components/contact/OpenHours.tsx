@@ -4,7 +4,7 @@ type Props = {}
 
 export const OpenHours: Component<Props> = () => {
 	return (
-		<div class="mb-6 text-center text-primary-200">
+		<div class="text-center text-primary-200 md:mb-6">
 			<h2 class="text-base">Zapraszamy codziennie w godzinach: </h2>
 
 			<p class="mx-16 flex flex-col px-8 ">

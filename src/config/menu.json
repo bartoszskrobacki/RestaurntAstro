@@ -2,7 +2,7 @@
 	"main": [
 		{ "name": "STRONA GŁÓWNA", "url": "/" },
 		{ "name": "MENU", "url": "/menu" },
-		{ "name": "DLA FIRM", "url": "/dostawa" },
+		{ "name": "DLA FIRM", "url": "/dlafirm" },
 		{ "name": "KONTAKT", "url": "/kontakt" }
 	]
 }

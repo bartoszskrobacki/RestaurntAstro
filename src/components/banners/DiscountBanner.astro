@@ -27,40 +27,55 @@ const entries = await contentfulClient.getEntries<FoodDiscountEntry>({
 })
 
 const items = entries.items[0].fields as unknown as FoodDiscount
-const banner = await contentfulClient.getAsset('2w8hSEdMbmk7ewrT2KMpMG')
+const banner_left = await contentfulClient.getAsset('rdDhjS9Wad3qW9Q1iUc2B')
+const banner_right = await contentfulClient.getAsset('741898oPJL1eZ3V0vU14XS')
 
 const postDate = new Date(items.date).toLocaleDateString('pl')
 ---
 
-<div class="mx-auto mb-16 flex max-w-7xl flex-col justify-center">
-	<div class="ribbon mx-auto mb-6">
-		<h1 class="text-sm leading-6 text-primary">Danie dnia</h1>{' '}
-	</div>
-	<div class="mx-auto flex flex-col md:max-h-96 md:flex-row">
-		<div class="flex w-full justify-center px-16 md:w-1/2">
-			<Image
-				src={banner.fields.file?.url ?? ''}
-				alt="Banner z promocjami"
-				height={500}
-				width={700}
-			/>
-		</div>
-		<div class="flex w-full flex-col justify-center px-16 py-8 md:w-1/2 md:p-10">
-			<span class="flex text-primary-100">{postDate}</span>
-			<h2 class="">Codziennie zapraszamy na wyjątkowe oferty dnia</h2>
-			<div class="flex flex-col gap-2 text-primary-100">
-				{
-					items?.meals?.map((meal) => (
-						<div class="flex justify-between">
-							<>
-								<span>
-									{meal?.fields?.name}, {meal.fields.description}
-								</span>
-								<span>{meal.fields.price.toFixed(2)}</span>
-							</>
-						</div>
-					))
-				}
+<div class="w-full bg-primary-300 py-16">
+	<div class="mx-auto flex max-w-[1600px] flex-col justify-center">
+		<div class="mx-auto flex flex-col md:flex-row">
+			<div class="flex items-center justify-center gap-8 px-16">
+				<Image
+					src={banner_left.fields.file?.url ?? ''}
+					alt="Banner z promocjami"
+					height={400}
+					width={300}
+					class="image-shadow hidden rounded-xl shadow-2xl md:block"
+				/>
+				<Image
+					src={banner_right.fields.file?.url ?? ''}
+					alt="Banner z promocjami"
+					height={450}
+					width={300}
+					class="image-shadow rounded-xl shadow-2xl"
+				/>
+			</div>
+			<div class="flex w-full flex-col justify-center px-16 md:w-1/2 md:p-16">
+				<h1 class="mb-0">PROMOCJA DNIA!</h1>
+				<span class="mb-4 flex text-primary-100">{postDate}</span>
+
+				<p class="my-4 text-primary-100">
+					Codziennie przygotowujemy dla państwa specjalną ofertę "Dania dnia", są to dania które
+					zazwyczaj nie są w naszej karcie w atrakcyjnych cenach. Dostępne zarówno na miejscu i w
+					dowozie. W dniu dzisiejszym zapraszamy na:
+				</p>
+
+				<div class="border-corners flex flex-col gap-2 p-2 text-xl text-primary-100">
+					{
+						items?.meals?.map((meal) => (
+							<div class="flex justify-between">
+								<>
+									<span>
+										{meal?.fields?.name}, {meal.fields.description}
+									</span>
+									<span>{meal.fields.price.toFixed(2)}</span>
+								</>
+							</div>
+						))
+					}
+				</div>
 			</div>
 		</div>
 	</div>
