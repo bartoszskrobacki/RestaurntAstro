@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets'
+import { contentfulClient } from 'src/lib/contentful'
+
+const banner = await contentfulClient.getAsset('4daWZi3LONlvdl1vbV4vyo')
+---
+
+<div class="flex flex-col-reverse md:flex-row">
+	<div class="flex justify-center p-16 md:w-1/2">
+		<Image
+			src={banner.fields.file?.url ?? ''}
+			alt="Main banner image"
+			height={500}
+			width={400}
+			class="image-shadow rounded-xl shadow-2xl"
+		/>
+	</div>
+	<div class="flex flex-col justify-center p-10 md:w-1/2">
+		<h1 class="my-4">Obiady dla firm w Gliwicach</h1>
+		<div class="my-4 flex flex-col gap-4 text-primary-200">
+			<p class="mb-4">
+				Prowadząc firmę, na pewno zdajesz sobie sprawę, jak istotne dla efektywności i dobrego
+				samopoczucia pracowników są przerwy i regeneracja – najlepiej przy smacznym, zdrowym
+				posiłku. Codziennie dostarczamy obiady do licznych firm w Gliwicach i okolicach.
+			</p>
+			<p>
+				Masz pytania dotyczące naszej oferty obiadów dla firm w Gliwicach? Skontaktuj się z nami –
+				realizujemy również różne zlecenia okolicznościowe, od wigilii firmowych po catering na
+				konferencjach i szkoleniach.
+			</p>
+			<p>
+				Zadzwoń pod <b><a class="after:inline" href="tel:570100 100">570 100 100.</a></b> Dla stałych
+				klientów oferujemy atrakcyjne rabaty i promocje!
+			</p>
+		</div>
+	</div>
+</div>

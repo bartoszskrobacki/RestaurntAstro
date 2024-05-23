@@ -1,7 +1,32 @@
 ---
 import Layout from '@layouts/Layout.astro'
+import FoodMenu from '@components/foodMenu/FoodMenu.astro'
+import { Image } from 'astro:assets'
+import background from '@media/images/nextwo.jpeg'
 ---
 
-<Layout title="Stołówka Studencka">
-	<main>Menu</main>
+<Layout title="Bar u Piotra menu">
+	<div class="relative mx-auto mt-20 max-w-7xl p-7">
+		<!-- <Image class="absolute top-0 max-h-[450px]" src={background} alt="" width={1200} height={550} /> -->
+		<div
+			class="relative mx-auto mt-12 flex w-1/2 flex-col items-center text-center text-primary-900"
+		>
+			<h2 class="text-base">Codziennie zapraszamy na świeze potrawy!</h2>
+			<p class="flex flex-col md:mx-16 md:px-8">
+				<span class="mb-6">
+					Od poniedziałku do piątku przygotowujemy oferty dnia, zapoznaj się z nimi na stronie
+					głównej!
+				</span>
+
+				<span>Zamówienia przyjmujemy telefonicznie.</span>
+
+				<span>Dowozimy na terenie Gliwic</span>
+				<span>Koszt dowozu do 7km - 7zł, powyzej 7km-15zł</span>
+				<span class="text-xs"
+					>*Dla dowozów doliczane małe opakowanie 60gr, duze opakowanie 1.50zł</span
+				>
+			</p>
+		</div>
+	</div>
+	<FoodMenu />
 </Layout>
