@@ -29,8 +29,7 @@ const entries = await contentfulClient.getEntries<FoodDiscountEntry>({
 const items = entries.items[0].fields as unknown as FoodDiscount
 const banner_left = await contentfulClient.getAsset('rdDhjS9Wad3qW9Q1iUc2B')
 const banner_right = await contentfulClient.getAsset('741898oPJL1eZ3V0vU14XS')
-
-const postDate = new Date(items.date).toLocaleDateString('pl')
+const postDate = new Date(items.date).toLocaleDateString('ro')
 ---
 
 <div class="w-full bg-primary-300 py-16">
