@@ -14,7 +14,7 @@ export const MainMenuFood: Component<Props> = (props) => {
 	return (
 		<div class="mx-auto flex min-h-[250px] max-w-4xl scroll-my-16 flex-col items-center justify-center py-16">
 			<h1 class="mb-0">MENU</h1>
-			<span class="mb-8 text-primary-200">Do zestawu obiadowego zupa za 7,90zł!</span>
+			<span class="mb-8 text-primary-200">Do zestawu obiadowego zupa za 8,90zł!</span>
 			<div class="mb-6 flex cursor-pointer flex-col items-center justify-between gap-4 font-light  text-primary-900 md:flex-row md:gap-16">
 				<For each={props.items}>
 					{(categorie) => (
