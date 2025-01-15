@@ -39,7 +39,7 @@ const postDate = new Date(items.date).toLocaleDateString('pl', {
 <div class="w-full bg-primary-300 py-16">
 	<div class="mx-auto flex max-w-[1600px] flex-col justify-center">
 		<div class="mx-auto flex flex-col md:flex-row">
-			<div class="flex items-center justify-center gap-8 px-16">
+			<div class="flex items-center justify-center gap-8 sm:px-16">
 				<Image
 					src={banner_left.fields.file?.url ?? ''}
 					alt="Banner z promocjami"
@@ -55,7 +55,7 @@ const postDate = new Date(items.date).toLocaleDateString('pl', {
 					class="image-shadow rounded-xl shadow-2xl"
 				/>
 			</div>
-			<div class="flex w-full flex-col justify-center px-16 md:w-1/2 md:p-16">
+			<div class="flex w-full flex-col justify-center px-8 sm:px-16 md:w-1/2 md:p-16">
 				<h1 class="mb-0">PROMOCJA DNIA!</h1>
 				<span class="mb-4 flex text-primary-100">{postDate}</span>
 
