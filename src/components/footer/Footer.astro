@@ -1,16 +1,23 @@
 ---
 import Icon from '@components/shared/Icon.astro'
+import Image from 'node_modules/astro/components/Image.astro'
+import kpr_banner from '@media/images/kpr_banner.webp'
 ---
 
 <div class="bottom-0 flex w-full bg-primary-800 text-primary">
 	<div
 		class="flex w-full flex-col items-center justify-center gap-8 px-11 py-11 md:flex-row md:items-start md:justify-between md:gap-20 xl:px-80"
 	>
-		<div class="flex w-full flex-col">
+		<div class="flex h-full w-full flex-col">
 			<h2>Bar u Piotra</h2>
-			<a href="https://www.facebook.com/obiadygliwice" class="w-8 after:border-transparent">
-				<Icon icon="facebook" />
-			</a>
+			<div class="flex h-full flex-col justify-between">
+				<a href="https://www.facebook.com/obiadygliwice" class="w-8 after:border-transparent">
+					<Icon icon="facebook" />
+				</a>
+				<a href="/cele">
+					<Image src={kpr_banner} alt="Banner z promocjami" class="mx-auto hidden md:block" />
+				</a>
+			</div>
 		</div>
 
 		<div class="flex w-full flex-col">
