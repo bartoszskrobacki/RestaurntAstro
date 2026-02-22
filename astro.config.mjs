@@ -1,8 +1,6 @@
-import { defineConfig, squooshImageService } from 'astro/config'
+import { defineConfig, passthroughImageService } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 import solidJs from '@astrojs/solid-js'
-
-import node from '@astrojs/node'
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,10 +9,7 @@ export default defineConfig({
 		port: 3100
 	},
 	image: {
-		service: squooshImageService()
+		service: passthroughImageService()
 	},
-	output: 'hybrid',
-	adapter: node({
-		mode: 'standalone'
-	})
+	output: 'static'
 })
