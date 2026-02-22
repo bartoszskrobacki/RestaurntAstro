@@ -1,9 +1,8 @@
 ---
-export const prerender = false
 import Layout from '@layouts/Layout.astro'
 import FoodMenu from '@components/foodMenu/FoodMenu.astro'
 import MainBanner from '@components/banners/MainBanner.astro'
-import DiscountBanner from '@components/banners/DiscountBanner.astro'
+import DiscountBanner from '@components/banners/DiscountBanner.tsx'
 import Image from 'node_modules/astro/components/Image.astro'
 import kpr_banner from '@media/images/kpr_banner.webp'
 
@@ -23,7 +22,7 @@ export interface FoodCategory {
 <Layout title="Bar u Piotra">
 	<main>
 		<MainBanner />
-		<DiscountBanner />
+		<DiscountBanner client:only="solid-js" />
 		<a href="/cele" class="after:content-none"
 			><Image src={kpr_banner} alt="Banner z promocjami" class="mx-auto" /></a
 		>
