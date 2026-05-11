@@ -51,7 +51,7 @@ export default function DiscountBanner() {
 												{meal.description ? `, ${meal.description}` : ''}
 												{meal.additionals ? ` (${meal.additionals})` : ''}
 											</span>
-											<span>{meal.price.toFixed(2)}</span>
+											<span>{meal.price}</span>
 										</div>
 									)}
 								</For>
