@@ -13,7 +13,9 @@ export default function DiscountBanner() {
 
 	const poromotionDate = () => {
 		const promo = data()
-		return promo ? new Date(promo.promotion.updatedAt).toLocaleDateString() : ''
+		return promo ? new Date(promo.promotion.updatedAt).toLocaleDateString('pl-PL',{day: "2-digit",
+        month: "2-digit",
+        year: "numeric"}) : ''
 	}
 
 	return (
