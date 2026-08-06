@@ -1,4 +1,4 @@
-import { createResource, For, Show } from 'solid-js'
+import { createResource, createSignal, For, Show } from 'solid-js'
 import { getPromotion } from '@lib/api'
 import type { PromotionResponse } from '@lib/api'
 
@@ -9,7 +9,12 @@ async function fetchPromotion(): Promise<PromotionResponse | null> {
 }
 
 export default function DiscountBanner() {
-	const [data] = createResource(fetchPromotion)
+	const [data] = createResource(fetchPromotion) 
+
+	const poromotionDate = () => {
+		const promo = data()
+		return promo ? new Date(promo.promotion.updatedAt).toLocaleDateString() : ''
+	}
 
 	return (
 		<div class="w-full bg-primary-300 py-16">
@@ -33,7 +38,7 @@ export default function DiscountBanner() {
 					</div>
 					<div class="flex w-full flex-col justify-center px-8 sm:px-16 md:w-1/2 md:p-16">
 						<h1 class="mb-0">PROMOCJA DNIA!</h1>
-						<span class="mb-4 flex text-primary-100">{data()?.promotion?.name}</span>
+						<span class="mb-4 flex text-primary-100">{poromotionDate()}</span>
 
 						<p class="my-4 text-primary-100">
 							Codziennie przygotowujemy dla państwa specjalną ofertę "Dania dnia", są to dania które
