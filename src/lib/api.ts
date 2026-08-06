@@ -12,6 +12,8 @@ export interface Promotion {
 	tag: string
 	name: string
 	meals: Meal[]
+	updatedAt: string
+	createdAt: string
 }
 
 export interface PromotionResponse {
