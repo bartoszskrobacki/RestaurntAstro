@@ -1,15 +1,20 @@
 ---
-import { Image } from 'astro:assets'
 import { contentfulClient } from '@lib/contentful'
+import { contentfulImage, contentfulSrcSet } from '@lib/contentfulImage'
+
 const banner = await contentfulClient.getAsset('6fGncPapkme4ru4wN4G86B')
+const url = banner.fields.file?.url ?? ''
 ---
 
 <div id="main" class="relative mx-auto flex w-full scroll-mt-16 justify-center pt-16">
-	<Image
-		src={banner.fields.file?.url ?? ''}
-		alt="Main banner"
-		height={700}
+	<img
+		src={contentfulImage(url, 1440)}
+		srcset={contentfulSrcSet(url)}
+		sizes="100vw"
+		alt="Bar u Piotra w Gliwicach – domowe obiady i dania dnia"
 		width={1600}
-		loading={'eager'}
+		height={700}
+		fetchpriority="high"
+		decoding="async"
 	/>
 </div>

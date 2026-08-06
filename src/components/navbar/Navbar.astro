@@ -10,7 +10,15 @@ const pathName = Astro.url.pathname
 
 <div class="fixed top-0 z-10 w-full bg-primary bg-opacity-95 px-9 text-primary-800 shadow-md">
 	<div class="mx-auto flex max-w-7xl items-center justify-between">
-		<Image src={logo} alt="logo" height={64} loading={'eager'} />
+		<a href="/" class="after:content-none">
+			<Image
+				src={logo}
+				alt="Bar u Piotra Gliwice"
+				height={64}
+				loading={'eager'}
+				fetchpriority="high"
+			/>
+		</a>
 		<Menu pathName={pathName} client:idle />
 		<Contact phoneNumber={BUSINESS.phones[0]} />
 	</div>

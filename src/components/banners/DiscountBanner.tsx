@@ -9,16 +9,7 @@ async function fetchPromotion(): Promise<PromotionResponse | null> {
 	return getPromotion(PROMOTION_TAG)
 }
 
-/**
- * Oferta dnia zmienia sie codziennie, a build strony nie leci codziennie - dlatego
- * lista dan pobierana jest z API po stronie klienta. Komponent renderuje sie jednak
- * przez SSR (client:load zamiast client:only), zeby stala czesc bannera - naglowek
- * i opis z frazami - trafila do HTML-u i byla indeksowana.
- */
 export default function DiscountBanner() {
-	// Zrodlo `false` na serwerze blokuje pobranie w trakcie builda - inaczej do HTML-u
-	// trafilaby promocja z dnia deployu i wisiala tam do nastepnego wgrania strony.
-	// Na kliencie zrodlo jest `true`, wiec po hydracji leci swiezy fetch.
 	const [data] = createResource(() => !isServer, fetchPromotion)
 
 	const poromotionDate = () => {
@@ -37,22 +28,30 @@ export default function DiscountBanner() {
 			<div class="mx-auto flex max-w-[1600px] flex-col justify-center">
 				<div class="mx-auto flex flex-col md:flex-row">
 					<div class="flex items-center justify-center gap-8 sm:px-16">
-						<img
-							src="/images/discount_left.jpg"
-							alt="Danie dnia serwowane w Barze u Piotra w Gliwicach"
-							height={400}
-							width={300}
-							loading="lazy"
-							class="image-shadow hidden rounded-xl shadow-2xl md:block"
-						/>
-						<img
-							src="/images/discount_right.jpeg"
-							alt="Domowy obiad z zestawu dnia – Bar u Piotra Gliwice"
-							height={450}
-							width={300}
-							loading="lazy"
-							class="image-shadow rounded-xl shadow-2xl"
-						/>
+						<picture class="hidden md:block">
+							<source srcset="/images/discount_left.webp" type="image/webp" />
+							<img
+								src="/images/discount_left.jpg"
+								alt="Danie dnia serwowane w Barze u Piotra w Gliwicach"
+								height={400}
+								width={300}
+								loading="lazy"
+								decoding="async"
+								class="image-shadow rounded-xl shadow-2xl"
+							/>
+						</picture>
+						<picture>
+							<source srcset="/images/discount_right.webp" type="image/webp" />
+							<img
+								src="/images/discount_right.jpg"
+								alt="Domowy obiad z zestawu dnia – Bar u Piotra Gliwice"
+								height={450}
+								width={300}
+								loading="lazy"
+								decoding="async"
+								class="image-shadow rounded-xl shadow-2xl"
+							/>
+						</picture>
 					</div>
 					<div class="flex w-full flex-col justify-center px-8 sm:px-16 md:w-1/2 md:p-16">
 						<h2 class="mb-0">Danie dnia w Gliwicach</h2>
@@ -60,8 +59,8 @@ export default function DiscountBanner() {
 
 						<p class="my-4 text-primary-100">
 							Codziennie przygotowujemy dla państwa specjalną ofertę "Dania dnia", są to dania które
-							zazwyczaj nie są w naszej karcie w atrakcyjnych cenach. Dostępne zarówno na miejscu i w
-							dowozie. W dniu dzisiejszym zapraszamy na:
+							zazwyczaj nie są w naszej karcie w atrakcyjnych cenach. Dostępne zarówno na miejscu i
+							w dowozie. W dniu dzisiejszym zapraszamy na:
 						</p>
 
 						<Show

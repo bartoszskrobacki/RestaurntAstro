@@ -100,7 +100,7 @@ export const ContactForm: Component<Props> = ({}) => {
 
 	return (
 		<div class="mt-6 w-full md:w-2/3">
-			<h1 class="text-base">Formularz kontaktowy</h1>
+			<h2 class="text-base">Formularz kontaktowy</h2>
 			<form onSubmit={sendEmail} class="w-full" id="contact-form">
 				<div class="mb-5 grid w-full grid-cols-2 gap-8">
 					<div>

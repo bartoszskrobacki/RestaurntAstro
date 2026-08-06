@@ -4,11 +4,9 @@ import type { FoodCategorie } from './FoodMenu.astro'
 
 type Props = {
 	items: FoodCategorie[]
-	/** Naglowek sekcji menu. */
 	heading?: string
 }
 
-/** Slug kategorii do kotwicy w linkach nawigacyjnych. */
 const slug = (name: string) =>
 	name
 		.toLowerCase()
@@ -18,11 +16,6 @@ const slug = (name: string) =>
 		.replace(/[^a-z0-9]+/g, '-')
 		.replace(/^-|-$/g, '')
 
-/**
- * Cale menu jest renderowane statycznie - wszystkie kategorie widoczne naraz,
- * bez JS po stronie klienta. Wczesniej <Show> zostawial w HTML tylko jedna
- * kategorie, wiec reszta dan nie istniala dla wyszukiwarek.
- */
 export const MainMenuFood: Component<Props> = (props) => {
 	const categories = () => props.items ?? []
 

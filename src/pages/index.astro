@@ -37,15 +37,14 @@ export interface FoodCategory {
 			</p>
 		</section>
 
-		<!--
-			client:load, nie client:only - dzieki temu stala czesc bannera (naglowek, opis,
-			frazy) jest w HTML i indeksuje sie. Sama lista dan dnia zmienia sie codziennie,
-			a build nie leci codziennie, wiec pobieramy ja z API po stronie klienta.
-		-->
 		<DiscountBanner client:load />
 
 		<a href="/cele" class="after:content-none"
-			><Image src={kpr_banner} alt="Bar u Piotra – projekt dofinansowany ze środków UE" class="mx-auto" /></a
+			><Image
+				src={kpr_banner}
+				alt="Bar u Piotra – projekt dofinansowany ze środków UE"
+				class="mx-auto"
+			/></a
 		>
 
 		<FoodMenu heading="Nasze menu" />
