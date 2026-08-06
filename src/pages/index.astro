@@ -19,14 +19,35 @@ export interface FoodCategory {
 }
 ---
 
-<Layout title="Bar u Piotra">
+<Layout
+	title="Bar u Piotra Gliwice – domowe obiady, bar mleczny, dania dnia"
+	description="Bar u Piotra w Gliwicach – tanie domowe obiady jak w barze mlecznym. Codziennie świeże dania dnia, zupy i obiady z dowozem na terenie Gliwic. Otwarte od 10:00."
+>
 	<main>
 		<MainBanner />
-		<DiscountBanner client:only="solid-js" />
+
+		<section class="mx-auto max-w-4xl px-7 py-12 text-center">
+			<h1>Bar u Piotra Gliwice</h1>
+			<p class="text-primary-200">
+				Domowe obiady w cenach baru mlecznego, w samym centrum Gliwic przy ul. Zwycięstwa 17.
+				Codziennie od poniedziałku do piątku przygotowujemy świeże dania dnia: zupy, kotlety,
+				pierogi i dania jednogarnkowe. Zamówienia przyjmujemy telefonicznie, dowozimy na terenie
+				Gliwic – zobacz <a href="/menu/">pełne menu i ceny</a> albo zamów
+				<a href="/dlafirm/">catering dla firm</a>.
+			</p>
+		</section>
+
+		<!--
+			client:load, nie client:only - dzieki temu stala czesc bannera (naglowek, opis,
+			frazy) jest w HTML i indeksuje sie. Sama lista dan dnia zmienia sie codziennie,
+			a build nie leci codziennie, wiec pobieramy ja z API po stronie klienta.
+		-->
+		<DiscountBanner client:load />
+
 		<a href="/cele" class="after:content-none"
-			><Image src={kpr_banner} alt="Banner z promocjami" class="mx-auto" /></a
+			><Image src={kpr_banner} alt="Bar u Piotra – projekt dofinansowany ze środków UE" class="mx-auto" /></a
 		>
 
-		<FoodMenu />
+		<FoodMenu heading="Nasze menu" />
 	</main>
 </Layout>

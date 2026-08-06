@@ -2,6 +2,7 @@
 import Icon from '@components/shared/Icon.astro'
 import Image from 'node_modules/astro/components/Image.astro'
 import kpr_banner from '@media/images/kpr_banner.webp'
+import { BUSINESS, ADDRESS_LINE, telHref } from '@config/business'
 ---
 
 <div class="bottom-0 flex w-full bg-primary-800 text-primary">
@@ -35,10 +36,15 @@ import kpr_banner from '@media/images/kpr_banner.webp'
 			<h2>Kontakt</h2>
 			<div class="flex flex-col gap-3">
 				<span class="font-bold">Telefon</span>
-				<a href="tel:32 232 24 02"><span> 32 232 24 02</span></a>
-				<a href="tel:570 100 110"><span> 570 100 110</span></a>
+				{
+					BUSINESS.phones.map((phone) => (
+						<a href={telHref(phone)}>
+							<span>{phone}</span>
+						</a>
+					))
+				}
 				<span class="font-bold">Adres</span>
-				<span>Zwycięsta 17, Gliwice</span>
+				<span>{ADDRESS_LINE}</span>
 			</div>
 		</div>
 	</div>
