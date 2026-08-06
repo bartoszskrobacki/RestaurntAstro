@@ -1,0 +1,11 @@
+# Kanonikalizacja: wszystko na https://obiady-gliwice.pl (bez www)
+RewriteEngine On
+
+# http -> https
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://obiady-gliwice.pl/$1 [R=301,L]
+
+# www -> bez www
+RewriteCond %{HTTP_HOST} ^www\.obiady-gliwice\.pl$ [NC]
+RewriteRule ^(.*)$ https://obiady-gliwice.pl/$1 [R=301,L]

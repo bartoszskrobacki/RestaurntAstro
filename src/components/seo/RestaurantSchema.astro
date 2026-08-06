@@ -1,0 +1,53 @@
+---
+import { BUSINESS } from '@config/business'
+
+const schema = {
+	'@context': 'https://schema.org',
+	'@type': 'Restaurant',
+	'@id': `${BUSINESS.url}/#restaurant`,
+	name: BUSINESS.name,
+	legalName: BUSINESS.legalName,
+	url: BUSINESS.url,
+	image: `${BUSINESS.url}/images/og-default.jpg`,
+	logo: `${BUSINESS.url}/favicon.png`,
+	description:
+		'Bar u Piotra w Gliwicach – domowe obiady w cenach baru mlecznego. Codzienne dania dnia, zupy, obiady abonamentowe i dowóz na terenie Gliwic.',
+	telephone: `+48${BUSINESS.phones[0].replace(/\s/g, '')}`,
+	email: BUSINESS.email,
+	priceRange: BUSINESS.priceRange,
+	servesCuisine: [...BUSINESS.cuisine],
+	currenciesAccepted: 'PLN',
+	address: {
+		'@type': 'PostalAddress',
+		streetAddress: BUSINESS.address.street,
+		addressLocality: BUSINESS.address.city,
+		postalCode: BUSINESS.address.postalCode,
+		addressRegion: BUSINESS.address.region,
+		addressCountry: BUSINESS.address.country
+	},
+	geo: {
+		'@type': 'GeoCoordinates',
+		latitude: BUSINESS.geo.lat,
+		longitude: BUSINESS.geo.lng
+	},
+	openingHoursSpecification: BUSINESS.openingHours.map((h) => ({
+		'@type': 'OpeningHoursSpecification',
+		dayOfWeek: [...h.days],
+		opens: h.opens,
+		closes: h.closes
+	})),
+	hasMenu: `${BUSINESS.url}/menu/`,
+	sameAs: [...BUSINESS.social],
+	areaServed: {
+		'@type': 'City',
+		name: 'Gliwice'
+	},
+	hasDeliveryMethod: {
+		'@type': 'DeliveryMethod',
+		name: 'Dowóz na terenie Gliwic'
+	},
+	acceptsReservations: 'False'
+}
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

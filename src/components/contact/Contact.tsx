@@ -1,6 +1,7 @@
 import { type Component } from 'solid-js'
 import { OpenHours } from './OpenHours'
 import { ContactForm } from './ContactForm'
+import { BUSINESS, ADDRESS_LINE, telHref } from '@config/business'
 
 type Props = {}
 
@@ -15,22 +16,21 @@ export const Contact: Component<Props> = ({}) => {
 						<div class="flex flex-col py-3">
 							<h2 class="text-base">Telefon</h2>
 							<ul>
-								<li>
-									<a href="tel:32 232 24 02">32 232 24 02</a>
-								</li>
-								<li>
-									<a href="tel:570 100 110">570 100 110</a>
-								</li>
+								{BUSINESS.phones.map((phone) => (
+									<li>
+										<a href={telHref(phone)}>{phone}</a>
+									</li>
+								))}
 							</ul>
 						</div>
 						<div class="py-3 ">
 							<h2 class="text-base">Adres</h2>
-							<span>Zwycięsta 31 Gliwice</span>
+							<span>{ADDRESS_LINE}</span>
 						</div>
 
 						<div class="py-3 ">
 							<h2 class="text-base">Email</h2>
-							<span>info@goscinna.gliwice.pl</span>
+							<a href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a>
 						</div>
 					</div>
 					<ContactForm />

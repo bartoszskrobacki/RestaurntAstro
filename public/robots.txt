@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /cele
+
+Sitemap: https://obiady-gliwice.pl/sitemap-index.xml

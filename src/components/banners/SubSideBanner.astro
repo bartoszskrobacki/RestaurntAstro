@@ -1,22 +1,28 @@
 ---
-import { Image } from 'astro:assets'
 import { contentfulClient } from 'src/lib/contentful'
+import { contentfulImage, contentfulSrcSet } from '@lib/contentfulImage'
+import { BUSINESS, telHref } from '@config/business'
 
 const banner = await contentfulClient.getAsset('4daWZi3LONlvdl1vbV4vyo')
+const url = banner.fields.file?.url ?? ''
 ---
 
 <div class="flex flex-col-reverse md:flex-row">
 	<div class="flex justify-center p-16 md:w-1/2">
-		<Image
-			src={banner.fields.file?.url ?? ''}
-			alt="Main banner image"
+		<img
+			src={contentfulImage(url, 800)}
+			srcset={contentfulSrcSet(url, [400, 600, 800])}
+			sizes="(min-width: 768px) 400px, 100vw"
+			alt="Obiady dla firm dostarczane do biur w Gliwicach"
 			height={500}
 			width={400}
+			loading="lazy"
+			decoding="async"
 			class="image-shadow rounded-xl shadow-2xl"
 		/>
 	</div>
 	<div class="flex flex-col justify-center p-10 md:w-1/2">
-		<h1 class="my-4">Obiady dla firm w Gliwicach</h1>
+		<h2 class="my-4">Obiady dla firm w Gliwicach</h2>
 		<div class="my-4 flex flex-col gap-4 text-primary-200">
 			<p class="mb-4">
 				Prowadząc firmę, na pewno zdajesz sobie sprawę, jak istotne dla efektywności i dobrego
@@ -29,8 +35,9 @@ const banner = await contentfulClient.getAsset('4daWZi3LONlvdl1vbV4vyo')
 				konferencjach i szkoleniach.
 			</p>
 			<p>
-				Zadzwoń pod <b><a class="after:inline" href="tel:570100 100">570 100 100.</a></b> Dla stałych
-				klientów oferujemy atrakcyjne rabaty i promocje!
+				Zadzwoń pod <b
+					><a class="after:inline" href={telHref(BUSINESS.phones[1])}>{BUSINESS.phones[1]}.</a></b
+				> Dla stałych klientów oferujemy atrakcyjne rabaty i promocje!
 			</p>
 		</div>
 	</div>

@@ -5,12 +5,16 @@ import { Image } from 'astro:assets'
 import background from '@media/images/nextwo.jpeg'
 ---
 
-<Layout title="Bar u Piotra menu">
+<Layout
+	title="Menu i ceny – Bar u Piotra Gliwice | obiady domowe i dania dnia"
+	description="Aktualne menu Baru u Piotra w Gliwicach: zupy, dania główne, obiady domowe i dania dnia. Zestaw obiadowy z zupą za 8,90 zł. Dowóz na terenie Gliwic od 40 zł."
+>
 	<div class="relative mx-auto mt-20 max-w-7xl p-7">
 		<!-- <Image class="absolute top-0 max-h-[450px]" src={background} alt="" width={1200} height={550} /> -->
 		<div
 			class="relative mx-auto mt-12 flex w-1/2 flex-col items-center text-center text-primary-900"
 		>
+			<h1>Menu – Bar u Piotra Gliwice</h1>
 			<h2 class="text-base">Codziennie zapraszamy na świeze potrawy!</h2>
 			<p class="flex flex-col md:mx-16 md:px-8">
 				<span class="mb-6">
@@ -28,5 +32,5 @@ import background from '@media/images/nextwo.jpeg'
 			</p>
 		</div>
 	</div>
-	<FoodMenu />
+	<FoodMenu heading="Menu i ceny" />
 </Layout>

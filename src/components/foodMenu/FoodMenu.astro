@@ -31,6 +31,11 @@ const entries = await contentfulClient.getEntries<MenuFood>({
 })
 
 const items = entries.items.map((item) => item as unknown as FoodCategorie)
+
+interface Props {
+	heading?: string
+}
+const { heading } = Astro.props
 ---
 
-<MainMenuFood client:load items={items} />
+<MainMenuFood items={items} heading={heading} />
